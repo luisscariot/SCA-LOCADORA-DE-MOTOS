@@ -1,0 +1,6 @@
+{
+  "name": "SCA Locadora de Motos",
+  "description": "Plataforma oficial da SCA Locadora de Motos. Aluguel de motocicletas sem burocracia, com manutenção inclusa, capacete grátis e atendimento rápido via WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
