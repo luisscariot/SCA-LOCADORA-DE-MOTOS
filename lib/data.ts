@@ -164,7 +164,7 @@ export const BENEFITS_DATA: Benefit[] = [
   {
     id: 'b3',
     title: 'Capacete Disponível para Locação',
-    description: 'Disponibilizamos capacetes com certificação INMETRO higienizados para locação junto com sua moto.',
+    description: 'Disponibilizamos capacetes com certificação INMETRO higienizados para locação junto com sua moto, com valores adicionais.',
     iconName: 'HardHat'
   },
   {
