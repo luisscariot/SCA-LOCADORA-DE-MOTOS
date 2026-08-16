@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { FleetSection } from '@/components/FleetSection';
@@ -10,9 +10,23 @@ import { FaqSection } from '@/components/FaqSection';
 import { GoogleReviewsSection } from '@/components/GoogleReviewsSection';
 import { WhatsAppFloatingButton } from '@/components/WhatsAppFloatingButton';
 import { Footer } from '@/components/Footer';
+import { PrivacyPolicyModal } from '@/components/PrivacyPolicyModal';
 
 export default function Home() {
   const whatsappNumber = '5554996139870';
+  const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
+
+  useEffect(() => {
+    const checkHash = () => {
+      if (window.location.hash === '#politica-de-privacidade') {
+        setIsPrivacyModalOpen(true);
+      }
+    };
+
+    checkHash();
+    window.addEventListener('hashchange', checkHash);
+    return () => window.removeEventListener('hashchange', checkHash);
+  }, []);
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans">
@@ -40,10 +54,20 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <Footer whatsappNumber={whatsappNumber} />
+      <Footer
+        whatsappNumber={whatsappNumber}
+        onOpenPrivacyPolicy={() => setIsPrivacyModalOpen(true)}
+      />
 
       {/* WhatsApp Floating Contact Button */}
       <WhatsAppFloatingButton whatsappNumber={whatsappNumber} />
+
+      {/* Interactive Privacy Policy & LGPD Modal */}
+      <PrivacyPolicyModal
+        isOpen={isPrivacyModalOpen}
+        onClose={() => setIsPrivacyModalOpen(false)}
+        whatsappNumber={whatsappNumber}
+      />
     </div>
   );
 }

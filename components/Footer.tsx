@@ -1,14 +1,16 @@
 'use client';
 
 import React from 'react';
-import { MessageCircle, MapPin, Clock, ShieldCheck } from 'lucide-react';
+import Link from 'next/link';
+import { MessageCircle, MapPin, Clock, ShieldCheck, Lock } from 'lucide-react';
 import { ScaLogo } from './ScaLogo';
 
 interface FooterProps {
   whatsappNumber: string;
+  onOpenPrivacyPolicy?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ whatsappNumber }) => {
+export const Footer: React.FC<FooterProps> = ({ whatsappNumber, onOpenPrivacyPolicy }) => {
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Olá! Vim pelo site da SCA Locadora de Motos e gostaria de alugar uma moto em Passo Fundo RS.')}`;
 
   return (
@@ -38,6 +40,22 @@ export const Footer: React.FC<FooterProps> = ({ whatsappNumber }) => {
               <li><a href="#como-funciona" className="hover:text-amber-400 transition-colors">Passo a Passo de Locação</a></li>
               <li><a href="#faq" className="hover:text-amber-400 transition-colors">Perguntas Frequentes (FAQ)</a></li>
               <li><a href="#avaliacoes" className="hover:text-amber-400 transition-colors">Avaliações do Google</a></li>
+              <li>
+                {onOpenPrivacyPolicy ? (
+                  <button
+                    onClick={onOpenPrivacyPolicy}
+                    className="hover:text-amber-400 transition-colors text-left flex items-center gap-1.5"
+                  >
+                    <Lock className="w-3 h-3 text-amber-400" />
+                    <span>Política de Privacidade</span>
+                  </button>
+                ) : (
+                  <Link href="/politica-de-privacidade" className="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                    <Lock className="w-3 h-3 text-amber-400" />
+                    <span>Política de Privacidade</span>
+                  </Link>
+                )}
+              </li>
             </ul>
           </div>
 
@@ -86,7 +104,25 @@ export const Footer: React.FC<FooterProps> = ({ whatsappNumber }) => {
         <div className="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-4">
           <p>© {new Date().getFullYear()} SCA Locadora de Motos • Passo Fundo RS. Todos os direitos reservados.</p>
 
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+            {onOpenPrivacyPolicy ? (
+              <button
+                onClick={onOpenPrivacyPolicy}
+                className="hover:text-amber-400 transition-colors underline underline-offset-2 flex items-center gap-1"
+              >
+                <Lock className="w-3 h-3 text-amber-400" />
+                Privacidade & Proteção de Dados (LGPD)
+              </button>
+            ) : (
+              <Link
+                href="/politica-de-privacidade"
+                className="hover:text-amber-400 transition-colors underline underline-offset-2 flex items-center gap-1"
+              >
+                <Lock className="w-3 h-3 text-amber-400" />
+                Privacidade & Proteção de Dados (LGPD)
+              </Link>
+            )}
+
             <span className="flex items-center gap-1 text-slate-400">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
               Empresa Verificada & Segura

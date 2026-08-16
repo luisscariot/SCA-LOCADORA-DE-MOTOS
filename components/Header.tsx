@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { MessageCircle, Menu, X } from 'lucide-react';
+import Link from 'next/link';
+import { MessageCircle, Menu, X, ShieldCheck } from 'lucide-react';
 import { ScaLogo } from './ScaLogo';
 
 interface HeaderProps {
@@ -25,9 +26,9 @@ export const Header: React.FC<HeaderProps> = ({ whatsappNumber }) => {
         <div className="flex items-center justify-between h-20">
           
           {/* Logo & Brand Name */}
-          <a href="#" className="flex items-center group py-1" title="SCA Locadora de Motos">
+          <Link href="/" className="flex items-center group py-1" title="SCA Locadora de Motos">
             <ScaLogo className="h-10 sm:h-12" />
-          </a>
+          </Link>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
@@ -102,6 +103,14 @@ export const Header: React.FC<HeaderProps> = ({ whatsappNumber }) => {
           >
             Avaliações do Google
           </a>
+          <Link
+            href="/politica-de-privacidade"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center gap-2 py-2 text-slate-400 text-sm hover:text-amber-400"
+          >
+            <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            <span>Política de Privacidade (LGPD)</span>
+          </Link>
 
           <div className="pt-2 flex flex-col gap-2">
             <a
