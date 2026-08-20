@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { ShieldCheck, Zap, Clock, MessageCircle, ArrowRight, CheckCircle2, Star, Sparkles, Bike } from 'lucide-react';
 import { ScaLogo } from './ScaLogo';
-import hondaCg160Img from '@/src/assets/images/honda_fan_160_user_1786141408440.jpg';
+import yamahaStreetImg from '@/src/assets/images/yamaha_street_red_1786137303307.jpg';
 
 interface HeroProps {
   whatsappNumber: string;
@@ -124,8 +124,8 @@ export const Hero: React.FC<HeroProps> = ({ whatsappNumber }) => {
 
               <div className="relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 p-2 shadow-2xl">
                 <Image
-                  src={hondaCg160Img}
-                  alt="Honda CG 160 - SCA Locadora de Motos Passo Fundo RS"
+                  src={yamahaStreetImg}
+                  alt="Yamaha Factor 150 - SCA Locadora de Motos Passo Fundo RS"
                   priority
                   className="w-full h-80 sm:h-96 object-cover rounded-xl"
                   referrerPolicy="no-referrer"
@@ -138,11 +138,12 @@ export const Hero: React.FC<HeroProps> = ({ whatsappNumber }) => {
                       <ScaLogo className="h-6" />
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-white">Honda CG 160</p>
+                      <p className="text-xs font-bold text-white">Yamaha Factor 150</p>
                       <p className="text-[11px] text-slate-400">Pronta entrega em Passo Fundo RS</p>
                     </div>
                   </div>
-                  <span className="px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-400 text-xs font-bold border border-emerald-500/30 shrink-0">
+                  <span className="px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-400 text-xs font-bold border border-emerald-500/30 shrink-0 flex items-center gap-1">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                     Disponível
                   </span>
                 </div>

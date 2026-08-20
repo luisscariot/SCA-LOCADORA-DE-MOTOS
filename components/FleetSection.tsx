@@ -80,12 +80,26 @@ export const FleetSection: React.FC<FleetSectionProps> = ({ whatsappNumber }) =>
                       referrerPolicy="no-referrer"
                     />
                     
-                    {moto.badge && (
-                      <div className="absolute top-3 left-3 bg-amber-400 text-slate-950 text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-lg shadow-md flex items-center gap-1">
-                        <Sparkles className="w-3 h-3" />
-                        <span>{moto.badge}</span>
-                      </div>
-                    )}
+                    {/* Availability & Feature Badges */}
+                    <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
+                      {moto.available ? (
+                        <div className="bg-emerald-500 text-slate-950 text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-lg shadow-lg flex items-center gap-1.5 border border-emerald-400">
+                          <span className="w-2 h-2 rounded-full bg-slate-950 animate-pulse" />
+                          <span>Disponível para Locação</span>
+                        </div>
+                      ) : (
+                        <div className="bg-slate-900/90 text-slate-400 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-lg border border-slate-700 backdrop-blur-sm">
+                          Consulte Próximas Vagas
+                        </div>
+                      )}
+
+                      {moto.popular && (
+                        <div className="bg-amber-400 text-slate-950 text-[11px] font-black uppercase tracking-wider px-2.5 py-1 rounded-lg shadow-md flex items-center gap-1">
+                          <Sparkles className="w-3 h-3" />
+                          <span>Destaque</span>
+                        </div>
+                      )}
+                    </div>
                   </div>
 
                   {/* Card Body */}

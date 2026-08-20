@@ -17,6 +17,7 @@ export interface Moto {
   deposit: number;
   image: string | StaticImageData;
   badge?: string;
+  available?: boolean;
   popular?: boolean;
   features: string[];
   specs: {
@@ -43,32 +44,6 @@ export interface FaqItem {
 
 export const MOTOS_DATA: Moto[] = [
   {
-    id: 'honda-street',
-    name: 'Honda CG 160',
-    brand: 'Honda',
-    category: 'STREET',
-    engine: '162,7 cc - Flex',
-    tankSize: '16.1 Litros',
-    weeklyPrice: 273,
-    monthlyWeeklyPrice: 273,
-    dailyPrice: 39,
-    deposit: 500,
-    image: hondaCg160Img,
-    popular: true,
-    features: [
-      'Novo Design & Tecnologia',
-      'Injeção Eletrônica PGM-FI',
-      'Freios CBS com acionamento combinado',
-      'Capacete disponível para locação'
-    ],
-    specs: {
-      brakes: 'Disco Dianteiro / Tambor Traseiro (CBS)',
-      start: 'Elétrica',
-      weight: '116 kg',
-      trunkCapacity: 'Suporta Suporte para Baú'
-    }
-  },
-  {
     id: 'yamaha-street',
     name: 'Yamaha Factor 150',
     brand: 'Yamaha',
@@ -80,7 +55,9 @@ export const MOTOS_DATA: Moto[] = [
     dailyPrice: 39,
     deposit: 500,
     image: yamahaStreetImg,
-    popular: false,
+    popular: true,
+    available: true,
+    badge: 'Disponível',
     features: [
       'Painel digital completo com função ECO',
       'Assento ergonômico e ótima estabilidade',
@@ -92,6 +69,33 @@ export const MOTOS_DATA: Moto[] = [
       start: 'Elétrica',
       weight: '125 kg',
       trunkCapacity: 'Pronta para suporte de carga'
+    }
+  },
+  {
+    id: 'honda-street',
+    name: 'Honda CG 160',
+    brand: 'Honda',
+    category: 'STREET',
+    engine: '162,7 cc - Flex',
+    tankSize: '16.1 Litros',
+    weeklyPrice: 273,
+    monthlyWeeklyPrice: 273,
+    dailyPrice: 39,
+    deposit: 500,
+    image: hondaCg160Img,
+    popular: false,
+    available: false,
+    features: [
+      'Novo Design & Tecnologia',
+      'Injeção Eletrônica PGM-FI',
+      'Freios CBS com acionamento combinado',
+      'Capacete disponível para locação'
+    ],
+    specs: {
+      brakes: 'Disco Dianteiro / Tambor Traseiro (CBS)',
+      start: 'Elétrica',
+      weight: '116 kg',
+      trunkCapacity: 'Suporta Suporte para Baú'
     }
   },
   {
