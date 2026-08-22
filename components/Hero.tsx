@@ -42,6 +42,46 @@ export const Hero: React.FC<HeroProps> = ({ whatsappNumber }) => {
               Motocicletas 100% revisadas por apenas <strong className="text-white font-bold">R$ 273,00/semana</strong> para todas as motos. Manutenção programada inclusa, caução de R$ 500,00 e aprovação descomplicada no WhatsApp.
             </p>
 
+            {/* Mobile-Only Moto Showcase (Appears before Rapidez card on mobile) */}
+            <div className="block lg:hidden pt-1 pb-2">
+              <div className="relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 p-1.5 shadow-2xl">
+                <Image
+                  src={yamahaStreetImg}
+                  alt="Yamaha Factor 150 - SCA Locadora de Motos Passo Fundo RS"
+                  priority
+                  className="w-full h-64 sm:h-72 object-cover rounded-xl"
+                  referrerPolicy="no-referrer"
+                />
+
+                {/* Compact Floating Top Banner */}
+                <div className="absolute top-3 left-3 right-3 bg-slate-950/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-800/80 shadow-lg flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="p-1 bg-[#1A204C] rounded-md border border-amber-400/30 flex items-center justify-center shrink-0">
+                      <ScaLogo className="h-4" />
+                    </div>
+                    <div>
+                      <p className="text-[11px] font-bold text-white leading-tight">Yamaha Factor 150</p>
+                      <p className="text-[9px] text-slate-400 leading-tight">Passo Fundo RS</p>
+                    </div>
+                  </div>
+                  <span className="px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 text-[10px] font-bold border border-emerald-500/30 shrink-0 flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    Disponível
+                  </span>
+                </div>
+
+                {/* Compact Floating Bottom Rating */}
+                <div className="absolute bottom-3 left-3 bg-slate-950/80 backdrop-blur-md px-2.5 py-1 rounded-lg border border-slate-800/80 shadow-md flex items-center gap-1.5">
+                  <div className="flex text-amber-400">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-3 h-3 fill-amber-400" />
+                    ))}
+                  </div>
+                  <span className="text-[10px] text-slate-300 font-semibold">5.0</span>
+                </div>
+              </div>
+            </div>
+
             {/* Value Pillars Badges */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
               <div className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
@@ -115,8 +155,8 @@ export const Hero: React.FC<HeroProps> = ({ whatsappNumber }) => {
 
           </div>
 
-          {/* Right Image / Showcase Column */}
-          <div className="lg:col-span-5 relative">
+          {/* Right Image / Showcase Column (Desktop Only) */}
+          <div className="hidden lg:block lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
               {/* Decorative Frame */}
@@ -131,28 +171,28 @@ export const Hero: React.FC<HeroProps> = ({ whatsappNumber }) => {
                   referrerPolicy="no-referrer"
                 />
 
-                {/* Floating Card - Model Info */}
-                <div className="absolute top-6 left-6 right-6 bg-slate-950/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-800 shadow-xl flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="p-1.5 bg-[#1A204C] rounded-lg border border-amber-400/40 flex items-center justify-center shrink-0">
-                      <ScaLogo className="h-6" />
+                {/* Compact Floating Top Banner */}
+                <div className="absolute top-3.5 left-3.5 right-3.5 bg-slate-950/80 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-slate-800/80 shadow-xl flex items-center justify-between">
+                  <div className="flex items-center gap-2.5">
+                    <div className="p-1 bg-[#1A204C] rounded-lg border border-amber-400/30 flex items-center justify-center shrink-0">
+                      <ScaLogo className="h-4.5" />
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-white">Yamaha Factor 150</p>
-                      <p className="text-[11px] text-slate-400">Pronta entrega em Passo Fundo RS</p>
+                      <p className="text-xs font-bold text-white leading-tight">Yamaha Factor 150</p>
+                      <p className="text-[10px] text-slate-400 leading-tight">Pronta entrega em Passo Fundo RS</p>
                     </div>
                   </div>
                   <span className="px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-400 text-xs font-bold border border-emerald-500/30 shrink-0 flex items-center gap-1">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                     Disponível
                   </span>
                 </div>
 
-                {/* Floating Bottom Card - Rating */}
-                <div className="absolute bottom-6 left-6 bg-slate-950/90 backdrop-blur-md px-4 py-2.5 rounded-xl border border-slate-800 shadow-xl flex items-center gap-2">
+                {/* Compact Floating Bottom Rating */}
+                <div className="absolute bottom-3.5 left-3.5 bg-slate-950/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-800/80 shadow-xl flex items-center gap-2">
                   <div className="flex text-amber-400">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-amber-400" />
+                      <Star key={i} className="w-3.5 h-3.5 fill-amber-400" />
                     ))}
                   </div>
                   <span className="text-xs text-slate-300 font-semibold">5.0</span>

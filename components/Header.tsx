@@ -19,7 +19,7 @@ export const Header: React.FC<HeaderProps> = ({ whatsappNumber }) => {
       {/* Top Banner Notice */}
       <div className="bg-blue-600 text-white text-xs py-1.5 px-4 text-center font-medium flex items-center justify-center gap-2">
         <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-        <span className="font-semibold">SCA Locadora de Motos • Passo Fundo RS:</span> Retirada no mesmo dia • Sem consulta ao SPC/Serasa • Capacete disponível para locação!
+        <span className="font-semibold">SCA Locadora de Motos • Passo Fundo RS:</span> Retirada no mesmo dia • Sem consulta ao SPC/Serasa • Capacete disponível para locação! Consulte valores e disponibilidade.
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
