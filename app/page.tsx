@@ -40,7 +40,10 @@ export default function Home() {
         {/* Motorcycle Fleet Section */}
         <FleetSection whatsappNumber={whatsappNumber} />
 
-        {/* Core Benefits */}
+        {/* Google Customer Reviews Section */}
+        <GoogleReviewsSection />
+
+        {/* Core Benefits - Por que escolher a SCA Locadora de Motos */}
         <BenefitsSection />
 
         {/* How It Works Workflow */}
@@ -48,9 +51,6 @@ export default function Home() {
 
         {/* FAQ Section */}
         <FaqSection whatsappNumber={whatsappNumber} />
-
-        {/* Google Customer Reviews Section */}
-        <GoogleReviewsSection />
       </main>
 
       {/* Footer */}

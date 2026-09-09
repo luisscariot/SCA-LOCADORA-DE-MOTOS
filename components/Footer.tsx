@@ -36,10 +36,10 @@ export const Footer: React.FC<FooterProps> = ({ whatsappNumber, onOpenPrivacyPol
             <h4 className="text-xs font-bold text-white uppercase tracking-wider">Links Rápidos</h4>
             <ul className="space-y-2 text-xs">
               <li><a href="#motos" className="hover:text-amber-400 transition-colors">Nossa Frota de Motos</a></li>
+              <li><a href="#avaliacoes" className="hover:text-amber-400 transition-colors">Avaliações do Google</a></li>
               <li><a href="#beneficios" className="hover:text-amber-400 transition-colors">Benefícios e Diferenciais</a></li>
               <li><a href="#como-funciona" className="hover:text-amber-400 transition-colors">Passo a Passo de Locação</a></li>
               <li><a href="#faq" className="hover:text-amber-400 transition-colors">Perguntas Frequentes (FAQ)</a></li>
-              <li><a href="#avaliacoes" className="hover:text-amber-400 transition-colors">Avaliações do Google</a></li>
               <li>
                 {onOpenPrivacyPolicy ? (
                   <button

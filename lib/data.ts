@@ -78,9 +78,9 @@ export const MOTOS_DATA: Moto[] = [
     category: 'STREET',
     engine: '162,7 cc - Flex',
     tankSize: '16.1 Litros',
-    weeklyPrice: 273,
-    monthlyWeeklyPrice: 273,
-    dailyPrice: 39,
+    weeklyPrice: 287,
+    monthlyWeeklyPrice: 287,
+    dailyPrice: 41,
     deposit: 500,
     image: hondaCg160Img,
     popular: false,
@@ -222,10 +222,16 @@ export const FAQ_DATA: FaqItem[] = [
     answer: 'Você precisa de CNH válida (categoria A ou AB, provisória ou definitiva), comprovante de residência atualizado em seu nome ou de parente de 1º grau, e cadastro no WhatsApp.'
   },
   {
+    id: 'f-poucos-dias',
+    category: 'Contrato',
+    question: 'Posso locar uma moto por poucos dias?',
+    answer: 'Sim, poderá locar por no mínimo 3 dias, consulte valores com nosso atendimento.'
+  },
+  {
     id: 'f2',
     category: 'Pagamento',
     question: 'Como funciona o pagamento semanal e o valor do caução?',
-    answer: 'O valor da locação é R$ 273,00 por semana para todas as motos. O valor do caução é R$ 500,00 para todas as motos, devolvido ao final do contrato após vistoria.'
+    answer: 'Os planos semanais são a partir de R$ 273,00 por semana (Yamaha Factor 150 por R$ 273,00/semana e Honda CG 160 por R$ 287,00/semana). O valor do caução é R$ 500,00, devolvido ao final do contrato após vistoria.'
   },
   {
     id: 'f3',
@@ -237,7 +243,7 @@ export const FAQ_DATA: FaqItem[] = [
     id: 'f4',
     category: 'Contrato',
     question: 'Capacete acompanha o aluguel da moto?',
-    answer: 'Não, mas disponibilizamos capacete para locação com custo adicional.'
+    answer: 'Não, mas disponibilizamos capacete para locação com custo adicional. Consulte valores e disponibilidade!'
   },
   {
     id: 'f5',

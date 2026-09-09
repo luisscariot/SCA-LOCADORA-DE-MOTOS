@@ -18,8 +18,8 @@ export const FleetSection: React.FC<FleetSectionProps> = ({ whatsappNumber }) =>
     ? MOTOS_DATA
     : MOTOS_DATA.filter(m => m.category === selectedCategory);
 
-  const getWhatsappUrl = (motoName: string) => {
-    const text = `Olá! Tenho interesse em alugar a moto *${motoName}* por R$ 273,00/semana na SCA Locadora de Motos em Passo Fundo RS. Gostaria de saber como prosseguir com o envio de documentos!`;
+  const getWhatsappUrl = (motoName: string, weeklyPrice: number) => {
+    const text = `Olá! Tenho interesse em alugar a moto *${motoName}* por R$ ${weeklyPrice},00/semana na SCA Locadora de Motos em Passo Fundo RS. Gostaria de saber como prosseguir com o envio de documentos!`;
     return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
   };
 
@@ -39,7 +39,7 @@ export const FleetSection: React.FC<FleetSectionProps> = ({ whatsappNumber }) =>
           </h2>
           
           <p className="text-slate-400 text-base">
-            Todas as nossas motocicletas (Street e Scooter Urbana ideal para passeio) por apenas <strong className="text-amber-400 font-bold">R$ 273,00 por semana</strong> e caução único de <strong className="text-white font-bold">R$ 500,00</strong>.
+            Motocicletas revisadas com planos a partir de <strong className="text-amber-400 font-bold">R$ 273,00 por semana</strong> e caução único de <strong className="text-white font-bold">R$ 500,00</strong>.
           </p>
         </div>
 
@@ -121,7 +121,7 @@ export const FleetSection: React.FC<FleetSectionProps> = ({ whatsappNumber }) =>
                         </span>
                         <div className="flex items-baseline gap-1 mt-0.5">
                           <span className="text-2xl font-black text-amber-400 tracking-tight">
-                            R$ 273,00
+                            R$ {moto.weeklyPrice},00
                           </span>
                           <span className="text-xs text-slate-400 font-semibold">/semana</span>
                         </div>
@@ -148,7 +148,7 @@ export const FleetSection: React.FC<FleetSectionProps> = ({ whatsappNumber }) =>
                 {/* Card Actions */}
                 <div className="p-6 pt-0">
                   <a
-                    href={getWhatsappUrl(moto.name)}
+                    href={getWhatsappUrl(moto.name, moto.weeklyPrice)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-sm shadow-md transition-all active:scale-[0.98]"

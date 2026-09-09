@@ -33,10 +33,10 @@ export const Header: React.FC<HeaderProps> = ({ whatsappNumber }) => {
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
             <a href="#motos" className="hover:text-amber-400 transition-colors">Nossa Frota</a>
+            <a href="#avaliacoes" className="hover:text-amber-400 transition-colors">Avaliações</a>
             <a href="#beneficios" className="hover:text-amber-400 transition-colors">Diferenciais</a>
             <a href="#como-funciona" className="hover:text-amber-400 transition-colors">Como Funciona</a>
             <a href="#faq" className="hover:text-amber-400 transition-colors">Perguntas Frequentes</a>
-            <a href="#avaliacoes" className="hover:text-amber-400 transition-colors">Avaliações</a>
           </nav>
 
           {/* Action Buttons */}
@@ -76,6 +76,13 @@ export const Header: React.FC<HeaderProps> = ({ whatsappNumber }) => {
             Nossa Frota
           </a>
           <a
+            href="#avaliacoes"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block py-2 text-slate-200 font-medium hover:text-amber-400"
+          >
+            Avaliações do Google
+          </a>
+          <a
             href="#beneficios"
             onClick={() => setMobileMenuOpen(false)}
             className="block py-2 text-slate-200 font-medium hover:text-amber-400"
@@ -95,13 +102,6 @@ export const Header: React.FC<HeaderProps> = ({ whatsappNumber }) => {
             className="block py-2 text-slate-200 font-medium hover:text-amber-400"
           >
             Perguntas Frequentes
-          </a>
-          <a
-            href="#avaliacoes"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 text-slate-200 font-medium hover:text-amber-400"
-          >
-            Avaliações do Google
           </a>
           <Link
             href="/politica-de-privacidade"

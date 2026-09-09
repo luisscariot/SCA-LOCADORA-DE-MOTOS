@@ -39,7 +39,7 @@ export const Hero: React.FC<HeroProps> = ({ whatsappNumber }) => {
 
             {/* Subtitle */}
             <p className="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl">
-              Motocicletas 100% revisadas por apenas <strong className="text-white font-bold">R$ 273,00/semana</strong> para todas as motos. Manutenção programada inclusa, caução de R$ 500,00 e aprovação descomplicada no WhatsApp.
+              Motocicletas 100% revisadas com planos a partir de <strong className="text-white font-bold">R$ 273,00/semana</strong>. Manutenção programada inclusa, caução de R$ 500,00 e aprovação descomplicada no WhatsApp.
             </p>
 
             {/* Mobile-Only Moto Showcase (Appears before Rapidez card on mobile) */}
