@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
-import { Star, MessageSquare, CheckCircle2, ThumbsUp } from 'lucide-react';
+import React, { useState } from 'react';
+import { Star, MessageSquare, ThumbsUp, ChevronDown, ChevronUp } from 'lucide-react';
 import { ScaLogo } from './ScaLogo';
 
 interface Review {
@@ -13,6 +13,8 @@ interface Review {
   rating: number;
   statsText: string;
   comment: string;
+  isNew?: boolean;
+  isLocalGuide?: boolean;
   ownerReply?: {
     author: string;
     timeAgo: string;
@@ -21,6 +23,40 @@ interface Review {
 }
 
 const GOOGLE_REVIEWS: Review[] = [
+  {
+    id: 'rev-elisandro',
+    author: 'Elisandro Benvinda',
+    avatarBg: 'bg-emerald-700',
+    initials: 'E',
+    timeAgo: 'Há 8 horas',
+    rating: 5,
+    statsText: 'Local Guide • 9 avaliações • 1 foto',
+    comment: 'Ótima locadora moto muito boa preço justo, bom atendimento e pontualidade na entrega pro cliente gostei muito assim que precisar vou locar novamente',
+    isNew: true,
+    isLocalGuide: true
+  },
+  {
+    id: 'rev-tael',
+    author: 'Tael Almeida',
+    avatarBg: 'bg-blue-600',
+    initials: 'T',
+    timeAgo: 'Há 1 semana',
+    rating: 5,
+    statsText: '2 avaliações • 0 foto',
+    comment: 'Atendimento muito bom e recomendo 💥💥💥',
+    isNew: true
+  },
+  {
+    id: 'rev-guilherme',
+    author: 'Guilherme Ribas',
+    avatarBg: 'bg-amber-600',
+    initials: 'G',
+    timeAgo: 'Há 2 semanas',
+    rating: 5,
+    statsText: '4 avaliações • 0 foto',
+    comment: 'Motos de qualidade e total segurança na hora de locar, recomendo 👏🏻👏🏻',
+    isNew: true
+  },
   {
     id: '1',
     author: 'Adriana F Hartmann',
@@ -204,6 +240,8 @@ const GOOGLE_REVIEWS: Review[] = [
 ];
 
 export const GoogleReviewsSection: React.FC = () => {
+  const [showAllMobile, setShowAllMobile] = useState(false);
+
   return (
     <section id="avaliacoes" className="py-16 lg:py-24 bg-slate-900 text-white border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
@@ -257,62 +295,99 @@ export const GoogleReviewsSection: React.FC = () => {
 
         {/* Reviews Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-          {GOOGLE_REVIEWS.map((review) => (
-            <div
-              key={review.id}
-              className="bg-slate-950 rounded-2xl border border-slate-800 p-6 flex flex-col justify-between space-y-4 hover:border-slate-700 transition-colors shadow-lg"
-            >
-              <div className="space-y-3">
-                {/* User Header */}
-                <div className="flex items-start justify-between gap-3">
-                  <div className="flex items-center gap-3">
-                    <div className={`w-10 h-10 rounded-full ${review.avatarBg} text-white font-bold flex items-center justify-center shrink-0 text-sm shadow-inner`}>
-                      {review.initials}
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-white text-sm leading-snug flex items-center gap-1.5">
-                        {review.author}
-                      </h4>
-                      <p className="text-[11px] text-slate-400">{review.statsText}</p>
-                    </div>
-                  </div>
-
-                  <span className="text-[11px] text-slate-500 shrink-0 font-medium">{review.timeAgo}</span>
-                </div>
-
-                {/* Star Rating */}
-                <div className="flex items-center gap-1">
-                  {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                  ))}
-                </div>
-
-                {/* Review Text */}
-                <p className="text-xs text-slate-300 leading-relaxed font-normal">
-                  &quot;{review.comment}&quot;
-                </p>
-              </div>
-
-              {/* Owner Reply if available */}
-              {review.ownerReply && (
-                <div className="pt-3 border-t border-slate-900 bg-slate-900/60 p-3.5 rounded-xl space-y-1.5 mt-2">
-                  <div className="flex items-center justify-between text-[11px]">
-                    <div className="flex items-center gap-2">
-                      <div className="p-1 bg-[#1A204C] rounded border border-amber-400/40">
-                        <ScaLogo className="h-4" />
+          {GOOGLE_REVIEWS.map((review, index) => {
+            const isHiddenOnMobile = !showAllMobile && index >= 6;
+            return (
+              <div
+                key={review.id}
+                className={`${
+                  isHiddenOnMobile ? 'hidden md:flex' : 'flex'
+                } bg-slate-950 rounded-2xl border border-slate-800 p-6 flex-col justify-between space-y-4 hover:border-slate-700 transition-colors shadow-lg`}
+              >
+                <div className="space-y-3">
+                  {/* User Header */}
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                      <div className={`w-10 h-10 rounded-full ${review.avatarBg} text-white font-bold flex items-center justify-center shrink-0 text-sm shadow-inner`}>
+                        {review.initials}
                       </div>
-                      <span className="font-bold text-amber-400">{review.ownerReply.author}</span>
-                      <span className="text-[10px] bg-blue-500/20 text-blue-300 px-1.5 py-0.5 rounded font-semibold">Proprietário</span>
+                      <div>
+                        <div className="flex items-center gap-1.5 flex-wrap">
+                          <h4 className="font-bold text-white text-sm leading-snug">
+                            {review.author}
+                          </h4>
+                          {review.isLocalGuide && (
+                            <span className="text-[10px] font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/30 px-1.5 py-0.5 rounded">
+                              Local Guide
+                            </span>
+                          )}
+                          {review.isNew && (
+                            <span className="text-[10px] font-bold bg-blue-500/20 text-blue-300 border border-blue-500/30 px-1.5 py-0.5 rounded">
+                              Novo
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-[11px] text-slate-400">{review.statsText}</p>
+                      </div>
                     </div>
-                    <span className="text-slate-500">{review.ownerReply.timeAgo}</span>
+
+                    <span className="text-[11px] text-slate-500 shrink-0 font-medium">{review.timeAgo}</span>
                   </div>
-                  <p className="text-[11px] text-slate-300 italic pl-1">
-                    {review.ownerReply.text}
+
+                  {/* Star Rating */}
+                  <div className="flex items-center gap-1">
+                    {[...Array(review.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                    ))}
+                  </div>
+
+                  {/* Review Text */}
+                  <p className="text-xs text-slate-300 leading-relaxed font-normal">
+                    &quot;{review.comment}&quot;
                   </p>
                 </div>
-              )}
-            </div>
-          ))}
+
+                {/* Owner Reply if available */}
+                {review.ownerReply && (
+                  <div className="pt-3 border-t border-slate-900 bg-slate-900/60 p-3.5 rounded-xl space-y-1.5 mt-2">
+                    <div className="flex items-center justify-between text-[11px]">
+                      <div className="flex items-center gap-2">
+                        <div className="p-1 bg-[#1A204C] rounded border border-amber-400/40">
+                          <ScaLogo className="h-4" />
+                        </div>
+                        <span className="font-bold text-amber-400">{review.ownerReply.author}</span>
+                        <span className="text-[10px] bg-blue-500/20 text-blue-300 px-1.5 py-0.5 rounded font-semibold">Proprietário</span>
+                      </div>
+                      <span className="text-slate-500">{review.ownerReply.timeAgo}</span>
+                    </div>
+                    <p className="text-[11px] text-slate-300 italic pl-1">
+                      {review.ownerReply.text}
+                    </p>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Mobile View More Toggle (Max 6 on mobile by default) */}
+        <div className="md:hidden flex justify-center pt-1">
+          <button
+            type="button"
+            onClick={() => setShowAllMobile(!showAllMobile)}
+            className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-slate-950 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-sm font-bold text-amber-400 flex items-center justify-center gap-2 transition-all active:scale-[0.98] shadow-lg"
+          >
+            <span>
+              {showAllMobile
+                ? 'Mostrar menos avaliações'
+                : `Ver todas as avaliações no Google (+${GOOGLE_REVIEWS.length - 6})`}
+            </span>
+            {showAllMobile ? (
+              <ChevronUp className="w-4 h-4 text-amber-400" />
+            ) : (
+              <ChevronDown className="w-4 h-4 text-amber-400" />
+            )}
+          </button>
         </div>
 
         {/* Footer Note */}

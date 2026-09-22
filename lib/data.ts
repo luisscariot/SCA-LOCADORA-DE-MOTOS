@@ -3,12 +3,13 @@ import hondaCg160Img from '@/src/assets/images/honda_fan_160_user_1786141408440.
 import yamahaStreetImg from '@/src/assets/images/yamaha_street_red_1786137303307.jpg';
 import hondaScooterImg from '@/src/assets/images/honda_scooter_white_1786137326718.jpg';
 import yamahaScooterImg from '@/src/assets/images/yamaha_scooter_blue_1786137315434.jpg';
+import hondaBros160Img from '@/src/assets/images/honda_bros_160_trail_1790115471607.jpg';
 
 export interface Moto {
   id: string;
   name: string;
   brand: string;
-  category: 'STREET' | 'SCOOTER URBANA';
+  category: 'STREET' | 'SCOOTER URBANA' | 'TRAIL';
   engine: string;
   tankSize: string;
   weeklyPrice: number;
@@ -55,14 +56,12 @@ export const MOTOS_DATA: Moto[] = [
     dailyPrice: 39,
     deposit: 500,
     image: yamahaStreetImg,
-    popular: true,
-    available: true,
-    badge: 'Disponível',
+    popular: false,
+    available: false,
     features: [
       'Painel digital completo com função ECO',
       'Assento ergonômico e ótima estabilidade',
-      'Excelente dirigibilidade e conforto',
-      'Capacete disponível para locação'
+      'Excelente dirigibilidade e conforto'
     ],
     specs: {
       brakes: 'Disco Dianteiro / Tambor Traseiro',
@@ -83,18 +82,44 @@ export const MOTOS_DATA: Moto[] = [
     dailyPrice: 41,
     deposit: 500,
     image: hondaCg160Img,
-    popular: false,
-    available: false,
+    popular: true,
+    available: true,
+    badge: 'Disponível',
     features: [
       'Novo Design & Tecnologia',
       'Injeção Eletrônica PGM-FI',
-      'Freios CBS com acionamento combinado',
-      'Capacete disponível para locação'
+      'Freios CBS com acionamento combinado'
     ],
     specs: {
       brakes: 'Disco Dianteiro / Tambor Traseiro (CBS)',
       start: 'Elétrica',
       weight: '116 kg',
+      trunkCapacity: 'Suporta Suporte para Baú'
+    }
+  },
+  {
+    id: 'honda-bros',
+    name: 'Honda Bros 160',
+    brand: 'Honda',
+    category: 'TRAIL',
+    engine: '162,7 cc - Flex',
+    tankSize: '12.0 Litros',
+    weeklyPrice: 329,
+    monthlyWeeklyPrice: 329,
+    dailyPrice: 47,
+    deposit: 500,
+    image: hondaBros160Img,
+    popular: false,
+    available: false,
+    features: [
+      'Suspensão de longo curso com máximo conforto',
+      'Excelente dirigibilidade na cidade e terrenos irregulares',
+      'Injeção eletrônica PGM-FI e freios a disco combinados'
+    ],
+    specs: {
+      brakes: 'Disco Dianteiro e Traseiro (CBS)',
+      start: 'Elétrica',
+      weight: '122 kg',
       trunkCapacity: 'Suporta Suporte para Baú'
     }
   },
@@ -114,8 +139,7 @@ export const MOTOS_DATA: Moto[] = [
     features: [
       'Câmbio automático V-MATIC (sem embreagem)',
       'Perfeita e prática para passeio e rotina urbana',
-      'Porta-objetos amplo interno sob o banco',
-      'Capacete disponível para locação'
+      'Porta-objetos amplo interno sob o banco'
     ],
     specs: {
       brakes: 'CBS Integrado',
@@ -136,12 +160,11 @@ export const MOTOS_DATA: Moto[] = [
     dailyPrice: 39,
     deposit: 500,
     image: yamahaScooterImg,
-    popular: true,
+    popular: false,
     features: [
       'Sistema de freios ABS nas duas rodas',
       'Transmissão automática CVT ideal para passeio',
-      'Iluminação Full LED e chave presencial Smart Key',
-      'Capacete disponível para locação'
+      'Iluminação Full LED e chave presencial Smart Key'
     ],
     specs: {
       brakes: 'Disco nas duas rodas com ABS',
@@ -231,7 +254,7 @@ export const FAQ_DATA: FaqItem[] = [
     id: 'f2',
     category: 'Pagamento',
     question: 'Como funciona o pagamento semanal e o valor do caução?',
-    answer: 'Os planos semanais são a partir de R$ 273,00 por semana (Yamaha Factor 150 por R$ 273,00/semana e Honda CG 160 por R$ 287,00/semana). O valor do caução é R$ 500,00, devolvido ao final do contrato após vistoria.'
+    answer: 'Os planos semanais são a partir de R$ 273,00 por semana (Yamaha Factor 150 por R$ 273,00/semana, Honda CG 160 por R$ 287,00/semana e Honda Bros 160 por R$ 329,00/semana). O valor do caução é R$ 500,00, devolvido ao final do contrato após vistoria.'
   },
   {
     id: 'f3',

@@ -12,7 +12,7 @@ interface FleetSectionProps {
 export const FleetSection: React.FC<FleetSectionProps> = ({ whatsappNumber }) => {
   const [selectedCategory, setSelectedCategory] = React.useState<string>('Todas');
 
-  const categories = ['Todas', 'STREET', 'SCOOTER URBANA'];
+  const categories = ['Todas', 'STREET', 'TRAIL', 'SCOOTER URBANA'];
 
   const filteredMotos = selectedCategory === 'Todas'
     ? MOTOS_DATA
@@ -61,7 +61,7 @@ export const FleetSection: React.FC<FleetSectionProps> = ({ whatsappNumber }) =>
         </div>
 
         {/* Moto Cards Grid */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto gap-8">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto gap-8">
           {filteredMotos.map((moto) => {
             return (
               <div
