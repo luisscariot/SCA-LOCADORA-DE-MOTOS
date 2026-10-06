@@ -56,8 +56,9 @@ export const MOTOS_DATA: Moto[] = [
     dailyPrice: 39,
     deposit: 500,
     image: yamahaStreetImg,
-    popular: false,
-    available: false,
+    popular: true,
+    available: true,
+    badge: 'Disponível',
     features: [
       'Painel digital completo com função ECO',
       'Assento ergonômico e ótima estabilidade',
@@ -82,9 +83,8 @@ export const MOTOS_DATA: Moto[] = [
     dailyPrice: 41,
     deposit: 500,
     image: hondaCg160Img,
-    popular: true,
-    available: true,
-    badge: 'Disponível',
+    popular: false,
+    available: false,
     features: [
       'Novo Design & Tecnologia',
       'Injeção Eletrônica PGM-FI',

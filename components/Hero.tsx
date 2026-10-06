@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { ShieldCheck, Zap, Clock, MessageCircle, ArrowRight, CheckCircle2, Star, Sparkles, Bike } from 'lucide-react';
 import { ScaLogo } from './ScaLogo';
-import hondaCg160Img from '@/src/assets/images/honda_fan_160_user_1786141408440.jpg';
+import yamahaFactorImg from '@/src/assets/images/yamaha_street_red_1786137303307.jpg';
 
 interface HeroProps {
   whatsappNumber: string;
@@ -46,8 +46,8 @@ export const Hero: React.FC<HeroProps> = ({ whatsappNumber }) => {
             <div className="block lg:hidden pt-1 pb-2">
               <div className="relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 p-1.5 shadow-2xl">
                 <Image
-                  src={hondaCg160Img}
-                  alt="Honda CG 160 - SCA Locadora de Motos Passo Fundo RS"
+                  src={yamahaFactorImg}
+                  alt="Yamaha Factor 150 - SCA Locadora de Motos Passo Fundo RS"
                   priority
                   className="w-full h-64 sm:h-72 object-cover rounded-xl"
                   referrerPolicy="no-referrer"
@@ -60,7 +60,7 @@ export const Hero: React.FC<HeroProps> = ({ whatsappNumber }) => {
                       <ScaLogo className="h-4" />
                     </div>
                     <div>
-                      <p className="text-[11px] font-bold text-white leading-tight">Honda CG 160</p>
+                      <p className="text-[11px] font-bold text-white leading-tight">Yamaha Factor 150</p>
                       <p className="text-[9px] text-slate-400 leading-tight">Passo Fundo RS</p>
                     </div>
                   </div>
@@ -164,8 +164,8 @@ export const Hero: React.FC<HeroProps> = ({ whatsappNumber }) => {
 
               <div className="relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 p-2 shadow-2xl">
                 <Image
-                  src={hondaCg160Img}
-                  alt="Honda CG 160 - SCA Locadora de Motos Passo Fundo RS"
+                  src={yamahaFactorImg}
+                  alt="Yamaha Factor 150 - SCA Locadora de Motos Passo Fundo RS"
                   priority
                   className="w-full h-80 sm:h-96 object-cover rounded-xl"
                   referrerPolicy="no-referrer"
@@ -178,7 +178,7 @@ export const Hero: React.FC<HeroProps> = ({ whatsappNumber }) => {
                       <ScaLogo className="h-4.5" />
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-white leading-tight">Honda CG 160</p>
+                      <p className="text-xs font-bold text-white leading-tight">Yamaha Factor 150</p>
                       <p className="text-[10px] text-slate-400 leading-tight">Pronta entrega em Passo Fundo RS</p>
                     </div>
                   </div>
