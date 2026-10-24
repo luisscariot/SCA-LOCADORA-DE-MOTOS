@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { ShieldCheck, Zap, Clock, MessageCircle, ArrowRight, CheckCircle2, Star, Sparkles, Bike } from 'lucide-react';
 import { ScaLogo } from './ScaLogo';
-import yamahaFactorImg from '@/src/assets/images/yamaha_street_red_1786137303307.jpg';
+import hondaBros160Img from '@/src/assets/images/honda_bros_160_trail_1790115471607.jpg';
 
 interface HeroProps {
   whatsappNumber: string;
@@ -46,27 +46,27 @@ export const Hero: React.FC<HeroProps> = ({ whatsappNumber }) => {
             <div className="block lg:hidden pt-1 pb-2">
               <div className="relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 p-1.5 shadow-2xl">
                 <Image
-                  src={yamahaFactorImg}
-                  alt="Yamaha Factor 150 - SCA Locadora de Motos Passo Fundo RS"
+                  src={hondaBros160Img}
+                  alt="Honda Bros 160 - SCA Locadora de Motos Passo Fundo RS"
                   priority
                   className="w-full h-64 sm:h-72 object-cover rounded-xl"
                   referrerPolicy="no-referrer"
                 />
 
                 {/* Compact Floating Top Banner */}
-                <div className="absolute top-3 left-3 right-3 bg-slate-950/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-800/80 shadow-lg flex items-center justify-between">
+                <div className="absolute top-3 left-3 right-3 bg-slate-950/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-800/80 shadow-lg flex items-center justify-between gap-2">
                   <div className="flex items-center gap-2">
                     <div className="p-1 bg-[#1A204C] rounded-md border border-amber-400/30 flex items-center justify-center shrink-0">
                       <ScaLogo className="h-4" />
                     </div>
                     <div>
-                      <p className="text-[11px] font-bold text-white leading-tight">Yamaha Factor 150</p>
+                      <p className="text-[11px] font-bold text-white leading-tight">Honda Bros 160</p>
                       <p className="text-[9px] text-slate-400 leading-tight">Passo Fundo RS</p>
                     </div>
                   </div>
-                  <span className="px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 text-[10px] font-bold border border-emerald-500/30 shrink-0 flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    Disponível
+                  <span className="px-2 py-0.5 rounded-md bg-amber-400/20 text-amber-300 text-[10px] font-bold border border-amber-400/30 shrink-0 flex items-center gap-1">
+                    <Sparkles className="w-3 h-3 text-amber-400" />
+                    Destaque da Frota
                   </span>
                 </div>
 
@@ -164,27 +164,27 @@ export const Hero: React.FC<HeroProps> = ({ whatsappNumber }) => {
 
               <div className="relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 p-2 shadow-2xl">
                 <Image
-                  src={yamahaFactorImg}
-                  alt="Yamaha Factor 150 - SCA Locadora de Motos Passo Fundo RS"
+                  src={hondaBros160Img}
+                  alt="Honda Bros 160 - SCA Locadora de Motos Passo Fundo RS"
                   priority
                   className="w-full h-80 sm:h-96 object-cover rounded-xl"
                   referrerPolicy="no-referrer"
                 />
 
                 {/* Compact Floating Top Banner */}
-                <div className="absolute top-3.5 left-3.5 right-3.5 bg-slate-950/80 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-slate-800/80 shadow-xl flex items-center justify-between">
+                <div className="absolute top-3.5 left-3.5 right-3.5 bg-slate-950/80 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-slate-800/80 shadow-xl flex items-center justify-between gap-2">
                   <div className="flex items-center gap-2.5">
                     <div className="p-1 bg-[#1A204C] rounded-lg border border-amber-400/30 flex items-center justify-center shrink-0">
                       <ScaLogo className="h-4.5" />
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-white leading-tight">Yamaha Factor 150</p>
-                      <p className="text-[10px] text-slate-400 leading-tight">Pronta entrega em Passo Fundo RS</p>
+                      <p className="text-xs font-bold text-white leading-tight">Honda Bros 160</p>
+                      <p className="text-[10px] text-slate-400 leading-tight">Passo Fundo RS</p>
                     </div>
                   </div>
-                  <span className="px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-400 text-xs font-bold border border-emerald-500/30 shrink-0 flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    Disponível
+                  <span className="px-2.5 py-1 rounded-md bg-amber-400/20 text-amber-300 text-xs font-bold border border-amber-400/30 shrink-0 flex items-center gap-1">
+                    <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                    Destaque da Frota
                   </span>
                 </div>
 

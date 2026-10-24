@@ -66,7 +66,11 @@ export const FleetSection: React.FC<FleetSectionProps> = ({ whatsappNumber }) =>
             return (
               <div
                 key={moto.id}
-                className="bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden hover:border-slate-700 transition-all duration-300 flex flex-col justify-between group shadow-xl hover:shadow-2xl hover:-translate-y-1"
+                className={`bg-slate-950 rounded-2xl border overflow-hidden transition-all duration-300 flex flex-col justify-between group shadow-xl hover:shadow-2xl hover:-translate-y-1 ${
+                  moto.popular
+                    ? 'border-amber-400/50 ring-1 ring-amber-400/20 hover:border-amber-400'
+                    : 'border-slate-800 hover:border-slate-700'
+                }`}
               >
                 <div>
                   {/* Image Container & Badges */}
@@ -81,7 +85,7 @@ export const FleetSection: React.FC<FleetSectionProps> = ({ whatsappNumber }) =>
                     />
                     
                     {/* Availability & Feature Badges */}
-                    <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
+                    <div className="absolute top-3 left-3 right-3 flex flex-wrap items-center justify-between gap-1.5 pointer-events-none">
                       {moto.available ? (
                         <div className="bg-emerald-500 text-slate-950 text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-lg shadow-lg flex items-center gap-1.5 border border-emerald-400">
                           <span className="w-2 h-2 rounded-full bg-slate-950 animate-pulse" />
@@ -94,9 +98,9 @@ export const FleetSection: React.FC<FleetSectionProps> = ({ whatsappNumber }) =>
                       )}
 
                       {moto.popular && (
-                        <div className="bg-amber-400 text-slate-950 text-[11px] font-black uppercase tracking-wider px-2.5 py-1 rounded-lg shadow-md flex items-center gap-1">
+                        <div className="bg-amber-400 text-slate-950 text-[10px] sm:text-[11px] font-black uppercase tracking-wider px-2.5 py-1 rounded-lg shadow-md flex items-center gap-1">
                           <Sparkles className="w-3 h-3" />
-                          <span>Destaque</span>
+                          <span>{moto.badge || 'Destaque da Frota'}</span>
                         </div>
                       )}
                     </div>

@@ -45,6 +45,33 @@ export interface FaqItem {
 
 export const MOTOS_DATA: Moto[] = [
   {
+    id: 'honda-bros',
+    name: 'Honda Bros 160',
+    brand: 'Honda',
+    category: 'TRAIL',
+    engine: '162,7 cc - Flex',
+    tankSize: '12.0 Litros',
+    weeklyPrice: 329,
+    monthlyWeeklyPrice: 329,
+    dailyPrice: 47,
+    deposit: 500,
+    image: hondaBros160Img,
+    popular: true,
+    available: false,
+    badge: 'Destaque da Frota',
+    features: [
+      'Suspensão de longo curso com máximo conforto',
+      'Excelente dirigibilidade na cidade e terrenos irregulares',
+      'Injeção eletrônica PGM-FI e freios a disco combinados'
+    ],
+    specs: {
+      brakes: 'Disco Dianteiro e Traseiro (CBS)',
+      start: 'Elétrica',
+      weight: '122 kg',
+      trunkCapacity: 'Suporta Suporte para Baú'
+    }
+  },
+  {
     id: 'yamaha-street',
     name: 'Yamaha Factor 150',
     brand: 'Yamaha',
@@ -56,9 +83,8 @@ export const MOTOS_DATA: Moto[] = [
     dailyPrice: 39,
     deposit: 500,
     image: yamahaStreetImg,
-    popular: true,
-    available: true,
-    badge: 'Disponível',
+    popular: false,
+    available: false,
     features: [
       'Painel digital completo com função ECO',
       'Assento ergonômico e ótima estabilidade',
@@ -78,9 +104,9 @@ export const MOTOS_DATA: Moto[] = [
     category: 'STREET',
     engine: '162,7 cc - Flex',
     tankSize: '16.1 Litros',
-    weeklyPrice: 287,
-    monthlyWeeklyPrice: 287,
-    dailyPrice: 41,
+    weeklyPrice: 301,
+    monthlyWeeklyPrice: 301,
+    dailyPrice: 43,
     deposit: 500,
     image: hondaCg160Img,
     popular: false,
@@ -94,32 +120,6 @@ export const MOTOS_DATA: Moto[] = [
       brakes: 'Disco Dianteiro / Tambor Traseiro (CBS)',
       start: 'Elétrica',
       weight: '116 kg',
-      trunkCapacity: 'Suporta Suporte para Baú'
-    }
-  },
-  {
-    id: 'honda-bros',
-    name: 'Honda Bros 160',
-    brand: 'Honda',
-    category: 'TRAIL',
-    engine: '162,7 cc - Flex',
-    tankSize: '12.0 Litros',
-    weeklyPrice: 329,
-    monthlyWeeklyPrice: 329,
-    dailyPrice: 47,
-    deposit: 500,
-    image: hondaBros160Img,
-    popular: false,
-    available: false,
-    features: [
-      'Suspensão de longo curso com máximo conforto',
-      'Excelente dirigibilidade na cidade e terrenos irregulares',
-      'Injeção eletrônica PGM-FI e freios a disco combinados'
-    ],
-    specs: {
-      brakes: 'Disco Dianteiro e Traseiro (CBS)',
-      start: 'Elétrica',
-      weight: '122 kg',
       trunkCapacity: 'Suporta Suporte para Baú'
     }
   },
@@ -254,7 +254,7 @@ export const FAQ_DATA: FaqItem[] = [
     id: 'f2',
     category: 'Pagamento',
     question: 'Como funciona o pagamento semanal e o valor do caução?',
-    answer: 'Os planos semanais são a partir de R$ 273,00 por semana (Yamaha Factor 150 por R$ 273,00/semana, Honda CG 160 por R$ 287,00/semana e Honda Bros 160 por R$ 329,00/semana). O valor do caução é R$ 500,00, devolvido ao final do contrato após vistoria.'
+    answer: 'Os planos semanais são a partir de R$ 273,00 por semana (Yamaha Factor 150 por R$ 273,00/semana, Honda CG 160 por R$ 301,00/semana e Honda Bros 160 por R$ 329,00/semana). O valor do caução é R$ 500,00, devolvido ao final do contrato após vistoria.'
   },
   {
     id: 'f3',
