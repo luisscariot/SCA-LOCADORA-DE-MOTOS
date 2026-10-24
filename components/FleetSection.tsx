@@ -93,7 +93,7 @@ export const FleetSection: React.FC<FleetSectionProps> = ({ whatsappNumber }) =>
                         </div>
                       ) : (
                         <div className="bg-slate-900/90 text-slate-400 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-lg border border-slate-700 backdrop-blur-sm">
-                          Consulte Próximas Vagas
+                          Consulte Disponibilidade
                         </div>
                       )}
 
