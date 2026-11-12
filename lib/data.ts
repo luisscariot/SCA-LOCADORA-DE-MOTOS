@@ -51,9 +51,9 @@ export const MOTOS_DATA: Moto[] = [
     category: 'TRAIL',
     engine: '162,7 cc - Flex',
     tankSize: '12.0 Litros',
-    weeklyPrice: 329,
-    monthlyWeeklyPrice: 329,
-    dailyPrice: 47,
+    weeklyPrice: 349,
+    monthlyWeeklyPrice: 349,
+    dailyPrice: 50,
     deposit: 500,
     image: hondaBros160Img,
     popular: true,
@@ -254,7 +254,7 @@ export const FAQ_DATA: FaqItem[] = [
     id: 'f2',
     category: 'Pagamento',
     question: 'Como funciona o pagamento semanal e o valor do caução?',
-    answer: 'Os planos semanais são a partir de R$ 273,00 por semana (Yamaha Factor 150 por R$ 273,00/semana, Honda CG 160 por R$ 301,00/semana e Honda Bros 160 por R$ 329,00/semana). O valor do caução é R$ 500,00, devolvido ao final do contrato após vistoria.'
+    answer: 'Os planos semanais são a partir de R$ 273,00 por semana (Yamaha Factor 150 por R$ 273,00/semana, Honda CG 160 por R$ 301,00/semana e Honda Bros 160 por R$ 349,00/semana). O valor do caução é R$ 500,00, devolvido ao final do contrato após vistoria.'
   },
   {
     id: 'f3',
